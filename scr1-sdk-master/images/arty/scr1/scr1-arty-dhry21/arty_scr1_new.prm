@@ -1,0 +1,14 @@
+===================================
+Configuration Memory information
+===================================
+File Format        MCS
+Interface          SPIX4
+Size               16M
+Start Address      0x00000000
+End Address        0x00FFFFFF
+Checksum           0xDFC9FCFA
+Fill Value         0xFF
+
+Addr1         Addr2         Date                    File(s)              	Checksum
+0x00000000    0x0021728B    Jan 12 16:55:48 2022    arty_scr1_new.bit    	0x021B166E
+File Checksum Total                                                             0x021B166E

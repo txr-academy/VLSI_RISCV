@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# updatemem v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Mon Aug 18 16:12:19 2025
+# Process ID         : 46640
+# Current directory  : d:/scr1-sdk-master/fpga/arty/scr1
+# Command line       : updatemem.exe -mode batch -source D:/2025.1/Vivado/scripts/updatemem/main.tcl -notrace -tclargs -meminfo D:/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/blk_mem_gen_0.mmi -data D:/scr1-sdk-master/fpga/arty/scr1/scbl.mem -proc dummy -bit D:/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1.bit -out D:/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1_new.bit -force
+# Log file           : d:/scr1-sdk-master/fpga/arty/scr1/updatemem.log
+# Journal file       : d:/scr1-sdk-master/fpga/arty/scr1\updatemem.jou
+# Running On         : lap
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : AMD Ryzen 5 6600H with Radeon Graphics         
+# CPU Frequency      : 3294 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 16438 MB
+# Swap memory        : 9663 MB
+# Total Virtual      : 26101 MB
+# Available Virtual  : 4966 MB
+#-----------------------------------------------------------
+source D:/2025.1/Vivado/scripts/updatemem/main.tcl -notrace
+Command: update_mem -meminfo D:/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/blk_mem_gen_0.mmi -data D:/scr1-sdk-master/fpga/arty/scr1/scbl.mem -proc dummy -bit D:/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1.bit -out D:/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1_new.bit -force
+Loading bitfile D:/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1.bit
+Loading data files...
+Updating memory content...
+Creating bitstream...
+Writing bitstream D:/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1_new.bit...
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+update_mem completed successfully
+update_mem: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 598.051 ; gain = 504.816
+INFO: [Common 17-206] Exiting updatemem at Mon Aug 18 16:12:27 2025...
