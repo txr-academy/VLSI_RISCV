@@ -57,8 +57,7 @@ Supported by Verilator, GDB, QEMU, FreeRTOS, Zephyr
 
 
 
-
-                                            RISC V IMPLEMENTATION ON ARTY A7 100T
+ ## RISC V IMPLEMENTATION ON ARTY A7 100T
  
 If you are downloading SCR1 from the official Syntacore SCR1 repository, some changes need to be made.
 
@@ -92,7 +91,7 @@ Open Tera Term, then configure the serial communication with a baud rate of 1152
 
 
 
-Check These
+ ## Check These
 
 While executing the arty_scr1.tcl file, ensure that you are sourcing it from the correct path: D:\scr1-sdk-master\fpga\arty\scr1. This specific location contains the necessary script for the automated implementation process, rather than the fpga/arty/scr directory mentioned previously.
 
