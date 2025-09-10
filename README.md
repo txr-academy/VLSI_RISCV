@@ -53,3 +53,51 @@ FPGA reference designs (Arty, Nexys4, DE10-Lite, etc.)
 Extensive documentation and user manual
 
 Supported by Verilator, GDB, QEMU, FreeRTOS, Zephyr
+
+
+
+
+
+                                            RISC V IMPLEMENTATION ON ARTY A7 100T
+ 
+If you are downloading SCR1 from the official Syntacore SCR1 repository, some changes need to be made.
+
+There will be two directories in this github repository  Scr1  and  scr1-sdk . Scr1 is the main repository that contains core ,primitives and include files etc.
+
+
+The scr1-sdk directory contains the software development kit and examples for the SCR1. We will use a .tcl file for automating tasks related to the implementation process.
+
+Before proceeding, we need to rearrange the directories as per the .tcl file's requirements. This involves ensuring the scr1 and scr1-sdk directories are correctly organized to facilitate the automated tasks defined in the .tcl script.
+
+
+In the scr1-sdk/fpga directory (specifically, the content at commit 66c9e52 for the arty/scr1 path), you should copy the scr1 folder from that location. Then, in your main Scr1 repository, create a new folder named fpga and paste the copied scr1 content into this newly created fpga folder. This ensures the correct directory structure for the .tcl file to operate as intended.
+
+To begin the implementation process in Vivado, you will first need to open the Vivado software. Once Vivado is open, locate the TCL Console, typically found at the bottom of the Vivado interface. In the TCL Console, enter the following command:cd path/fpga/arty/scr
+
+Replace path with the actual directory path to your fpga/arty/scr folder within your local repository. This command changes the current working directory in the TCL Console to the specified location, which is necessary for running the subsequent commands and scripts related to the SCR1 implementation.
+
+After navigating to the scr directory, you can initiate the automated implementation process by sourcing the arty_scr1.tcl file. In the TCL Console, simply enter the command: source arty_scr1.tcl. This command will execute the script, automating the necessary steps for the SCR1 implementation.
+
+
+Next, to update the memory address, you will need to source the mem_update.tcl file. In the TCL Console, enter the command: source mem_update.tcl. This will execute the script to update the memory addresses as required.
+
+
+
+Finally, to program the device, open the Device Manager in Vivado. Then, navigate to "Open Target" and select "Auto Connect." Once connected, choose "Open Configure Memory Device." From the list, select "s25fl128xxxxx00." To load the memory configuration, browse to D:\scr1-sdk-master\fpga\arty\scr1\arty_scr1\arty_scr1.runs\impl_1 and load the arty_scr1_new.mcs file.
+
+
+Open Tera Term, then configure the serial communication with a baud rate of 115200. Upon power-up, the bootloader display will appear in Tera Term.
+
+
+
+
+
+Check These
+
+While executing the arty_scr1.tcl file, ensure that you are sourcing it from the correct path: D:\scr1-sdk-master\fpga\arty\scr1. This specific location contains the necessary script for the automated implementation process, rather than the fpga/arty/scr directory mentioned previously.
+
+We observed that implementing the code using a bitstream (.bit) file does not yield output without a JTAG Cable Adapter. Therefore, it is essential to utilize non-volatile memory by employing the .mcs file for proper functionality and output.
+
+When configuring the memory device, the official RISC-V SCR1 reference manual on the GitHub repository indicates the part name "n25q128-3.3v." However, this specific part is for the Arty A35 board. Since we are using the Arty A7 100T, our corresponding volatile memory part name is "s25fl128xxxx00." by  infineon technologies.
+
+
